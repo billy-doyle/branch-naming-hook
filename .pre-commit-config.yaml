@@ -1,0 +1,7 @@
+repos:
+  - repo: https://github.com/billy-doyle/branch-naming-hook
+    rev: v1.0.0
+    hooks:
+      - id: branch-naming-hook
+        args: ["ST"]
+        stages: ["pre-push"]

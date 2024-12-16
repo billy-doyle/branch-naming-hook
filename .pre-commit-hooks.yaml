@@ -1,8 +1,8 @@
-- id: validate-branch-name
+- id: branch-naming-hook
   name: Validate Branch Naming
   description: Enforces branch naming rules based on a regex pattern.
-  entry: bash validate-branch.sh
-  language: system
+  entry: branch-naming-hook
+  language: python
   pass_filenames: false
   args: ["ST"]  # Default project abbreviation (can be overridden in .pre-commit-config.yaml)
-  stages: [push]  # Use [commit] for pre-commit or [push] for pre-push
+  stages: [pre-push]  # Use [commit] for pre-commit or [push] for pre-push
