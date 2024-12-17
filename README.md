@@ -11,5 +11,5 @@ repos:
   - repo: https://github.com/billy-doyle/branch-naming-hook
     rev: v1.0.0  # Use the latest tag or branch
     hooks:
-      - id: validate-branch-name
+      - id: branch-naming-hook
         args: ["<project_abbr>"]  # Replace <project_abbr> with your project abbreviation (e.g., "ST")
