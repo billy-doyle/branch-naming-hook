@@ -6,3 +6,4 @@
   pass_filenames: false
   args: ["ST"]  # Default project abbreviation (can be overridden in .pre-commit-config.yaml)
   stages: [post-checkout, pre-push]  # Use [commit] for pre-commit or [push] for pre-push
+  always_run: true
