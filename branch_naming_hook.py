@@ -21,6 +21,7 @@ def validate_branch_name(project_abbr):
             f"This branch violates the branch naming rules. Please rename your branch to follow: <type>/<{project_abbr}-ISSUE>-<description>"  # noqa: E501
         )
         sys.exit(1)
+        return
 
     sys.exit(0)
 

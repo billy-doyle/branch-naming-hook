@@ -6,7 +6,7 @@ from branch_naming_hook import validate_branch_name
 
 
 class TestValidateBranchName(unittest.TestCase):
-    @patch("branch_validator.Repo")
+    @patch("branch_naming_hook.Repo")
     def test_valid_branch_name(self, mock_repo):
         """Test that a valid branch name exits with status 0"""
         project_abbr = "PROJ"
@@ -16,7 +16,7 @@ class TestValidateBranchName(unittest.TestCase):
             validate_branch_name(project_abbr)
             mock_exit.assert_called_once_with(0)
 
-    @patch("branch_validator.Repo")
+    @patch("branch_naming_hook.Repo")
     def test_invalid_branch_name(self, mock_repo):
         """Test that an invalid branch name exits with status 1 and prints a message"""
         project_abbr = "PROJ"
@@ -32,7 +32,7 @@ class TestValidateBranchName(unittest.TestCase):
                 "This branch violates the branch naming rules", mock_stdout.getvalue()
             )
 
-    @patch("branch_validator.Repo")
+    @patch("branch_naming_hook.Repo")
     def test_main_branch_name(self, mock_repo):
         """Test that main branch names are valid"""
         project_abbr = "PROJ"
@@ -42,7 +42,7 @@ class TestValidateBranchName(unittest.TestCase):
                 validate_branch_name(project_abbr)
                 mock_exit.assert_called_once_with(0)
 
-    @patch("branch_validator.Repo")
+    @patch("branch_naming_hook.Repo")
     def test_branch_name_with_special_characters(self, mock_repo):
         """Test valid branch names with special characters in the description"""
         project_abbr = "PROJ"
